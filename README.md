@@ -1,43 +1,12 @@
 
-# Meme-dozer
 
-## About
-Meme-dozer is django based twitter-like social network <br>
-Link: [peteropletaev.pythonanywhere.com](http://peteropletaev.pythonanywhere.com) (**adblock recommended**)
+# Тестовое задание
 
-Implemented features:
-- Profile: create, edit, restore password, add pfp
-- Create a post. If a post has a picture, it is considered to be a humoresque. Otherwise - an anecdote.
-- Posts are showed on the home page. Posts are positioned by a pinterest-inspired grid.
-- Posts will load by 10-packs as the user scrolls down the page
-- Posts can be edited, deleted and liked
-- Liking a post uses Rest API so that a page doesn't have to be reloaded
-- All the information is stored in a SQLite database that consists of 3 tables: users, posts, likes
-- Website has an admin page accessible at /admin. Login: admin, password: admin
-- Website is adapted for all kinds of screens
+## Реализованный функционал:
+- Администратор создает список подразделений (subdivisions). Так же он может создать и аккаунты физлиц (users) и сотрудников (profiles). Панель администратора доступна по ссылке `/admin`. (логин: admin, пароль: admin)
+- Сотрудники могут создать свои аккаунты сами, а затем в профиле `/profile` указать свое имя и подразделение, в котором работают. Информация сохраняется по нажатию кнопки "применить"
+- Администратор в панели администратора может выдать сотрудникам (profiles) булевый флаг tablemaster
+- Сотрудники с флагом tablemaster могут создать табель (`/table/new`) на нужный   временной промежуток (по умолчанию - 30 дней). В табеле будут перечислены все сотрудники подразделения, соответствующего сотруднику. Табель будет доступен по ссылке `/table/<id табеля>`
+- Пользователи могут редактировать ячейки в табеле. Ячейка табеля - строка. Сотрудники могут написать количество часов, которые они отработали, или причину отсутствия на рабочем месте. Затем, пользователь может сохранить изменения, нажав на кнопку "сохранить"
 
-# Setup
-
-The first thing to do is to clone the repository:
-
-$ git clone [https://github.com/petosbratok/meme-dozer](https://github.com/petosbratok/meme-dozer)
-
-$ cd meme-dozer
-
-Install Python and Pip.
-Install the dependencies:
-
-$ pip install -r requirements.txt
-
-Once  `pip`  has finished downloading the dependencies:
-
-$ cd project
-$ python manage.py runserver
-
-# Main links 
-Home page:  `http://127.0.0.1:8000/`<br>
-Profile: `http://127.0.0.1:8000/profile`<br>
-Posts of a certain user: `http://127.0.0.1:8000/user/<user_id>`<br>
-Certain post: `http://127.0.0.1:8000/post/<post_id>` <br>
-About the website: `http://127.0.0.1:8000/about`
 
